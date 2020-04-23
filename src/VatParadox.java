@@ -7,16 +7,16 @@ class VatParadox {
             System.out.println("\nProdukt:\t\t" + product.getName() +
                     "\nOpis:\t\t\t" + product.getDescription() +
                     "\nCena netto:\t\t" + product.getPrice() + " PLN" +
-                    "\nCena brutto:\t" + CalculatePriceWithVat(product) + " PLN" +
+                    "\nCena brutto:\t" + calculatePriceWithVat(product) + " PLN" +
                     "\nKategoria:\t\t" + product.getCategory());
         }
     }
 
-    private double CalculatePriceWithVat(Product product){
-        return product.getPrice() + CalculateVat(product);
+    private double calculatePriceWithVat(Product product){
+        return product.getPrice() + calculateVat(product);
     }
 
-    private double CalculateVat(Product product){
+    private double calculateVat(Product product){
         return switch (product.getCategory()) {
             case "mrożona pizza"    -> 0.05;
             case "ciastko"          -> 0.08;
